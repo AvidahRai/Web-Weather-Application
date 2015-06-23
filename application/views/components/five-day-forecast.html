@@ -1,0 +1,40 @@
+<?php
+	/*
+	 * Filename: five-day-forecast.html
+	 * Author: Avinash Rai
+	 * Last Modified: 21/06/2015
+	 * Description: components/five-day-forecast View.
+	 */	
+?>
+
+	<section id="weather-forecast" class="forecast clear">
+		<?php
+			for ( $i=1; $i < $data->get('cnt'); $i++ ) {
+				
+				$day_date = strtoupper(date( 'D d', $data->get("list.$i.dt")));			
+				$icon = $data->get("list.$i.weather.0.icon");
+				$max_temp = round($data->get("list.$i.temp.max"));
+				$min_temp = round($data->get("list.$i.temp.min"));
+				$pressure = round($data->get("list.$i.pressure"));
+				$humidity = $data->get("list.$i.humidity");
+				$wind_speed = round($data->get("list.$i.speed"));
+				$wind_direction = $data->cardinalDirection($data->get("list.$i.deg"));
+				$weather_icon = Avi\HTML::url("images/weather-icons/$icon.ico");
+				$humidity_icon = Avi\HTML::url("images/weather-icons/humidity.ico");
+				$wind_icon = Avi\HTML::url("images/weather-icons/wind.ico");
+				$temp_icon = Avi\HTML::url("images/weather-icons/temperature.ico");
+				$barometer_icon = Avi\HTML::url("images/weather-icons/barometer.png");
+
+				echo <<<FORECAST
+					<article>
+						<h3>$day_date</h3><br/>
+						<img id="event"src="$weather_icon"><br/>
+						<p><img src="$temp_icon"> <span id="temp">$max_temp&deg;C / $min_temp&degC </span></p>
+						<p><img src="$barometer_icon"> $pressure hPa</p>
+						<p><img src="$humidity_icon"> $humidity %</p>
+						<p><img src="$wind_icon"> $wind_speed mph <strong>$wind_direction</strong></p>
+					</article>
+FORECAST;
+			}
+		?>
+	</section>

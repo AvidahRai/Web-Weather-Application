@@ -1,0 +1,19 @@
+<?php
+	/*
+	 * Filename: search-results.html
+	 * Author: Avinash Rai
+	 * Last Modified: 21/06/2015
+	 * Description: components/search-results View.
+	 */	
+?>
+
+<?php foreach($data as $city) {
+			extract($city);?>
+		<li>
+			<a href="javascript:void(0)" onclick="weatherBySelect(<?=$id?>)">
+				<strong><?=$name?>, <?=$country?></strong> <small>( <?=$lat?>, <?=$long?>)</small>
+			</a>
+		</li>
+<?php } ?>
+				
+	

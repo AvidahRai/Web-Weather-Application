@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+	<meta charset="utf-8"> 
+	<title>Weather Application</title>
+	<meta name="author" content="Avinash Rai"> 
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="<?= Avi\HTML::url('css/main.css') ?>" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="<?= Avi\HTML::url('js/Classes.js') ?>"></script>
+	<script src="<?= Avi\HTML::url('js/events.js') ?>"></script>
+	<!--[if lte IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->			
+
+  </head>
+  
+  <body>
+	<main>
+		<header class="clear"> 
+			<article class="logo left"> 
+				<h1>Weather Application<br/><small> - By Avinash Rai</small></h1>
+			</article>
+			<article class="power left">
+				<small>Powered by</small><br/>
+				<a target="_blank" href="http://openweathermap.org/api"><img src="<?=Avi\HTML::url('images/vendors/openweathermap.png')?>"></a>
+				<a target="_blank" href="http://www.telize.com/"><img src="<?=Avi\HTML::url('images/vendors/telize.png')?>"></a>
+			</article>
+			<article id="search" class="search right">
+				<input id="search-bar" type="text" size="50" value="Search for a town/city by name">
+				<ul id="search-results"></ul>
+			</article>
+		</header>
+		<section id="main"class="clear"> 
+			&nbsp;
+		</section>
+		<footer> 
+			<p>
+				Special Thanks to &nbsp;<a target="_blank" href="http://www.iconsdb.com/"><img src="<?=Avi\HTML::url('images/vendors/iconsdb.jpg')?>"></a>
+			 	&nbsp;&nbsp;<a target="_blank" href="http://www.pixabay.com/"><img src="<?=Avi\HTML::url('images/vendors/pixabay.png')?>"></a>
+			  </p>
+			<p>&copy;<a target="_blank" href="http://www.avinashrai.com">www.avinashrai.com</a>  <?= date('Y')?></p>
+		</footer>
+	</main>
+  </body>
+ 
+ </html>

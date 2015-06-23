@@ -1,0 +1,64 @@
+<?php
+	/*
+	 * Filename: current-weather.html
+	 * Author: Avinash Rai
+	 * Last Modified: 21/06/2015
+	 * Description: components/current-weather View.
+	 */	
+?>
+	<section id="current-weather" class="current clear">
+		<?php	
+			$city = $data->get('name');
+			$country = $data->get('sys.country');
+			$event = $data->get('weather.0.main');
+			$day_date = date( 'l, jS F Y', $data->get('dt'));
+			$temp = round($data->get('main.temp') );
+			$sunrise = date('H:i', $data->get('sys.sunrise') );
+			$sunset = date('H:i', $data->get('sys.sunset') );
+			$max_temp = round($data->get('main.temp_max'));
+			$min_temp = round($data->get('main.temp_min'));
+			$pressure = round($data->get('main.pressure'));
+			$humidity = $data->get('main.humidity');
+			$wind_speed = $data->get('wind.speed');
+			$wind_direction = $data->cardinalDirection($data->get('wind.deg'));
+			$icon =  $data->get('weather.0.icon');
+			$weather_icon = Avi\HTML::url("images/weather-icons/$icon.ico");
+			$humidity_icon = Avi\HTML::url("images/weather-icons/humidity.ico");
+			$wind_icon = Avi\HTML::url("images/weather-icons/wind.ico");
+			$temp_icon = Avi\HTML::url("images/weather-icons/temperature.ico");
+			$sun_icon = Avi\HTML::url("images/weather-icons/sun.png");
+			$barometer_icon = Avi\HTML::url("images/weather-icons/barometer.png");
+		?>
+		<article class="center">
+			<p id="city"><?=$city?>, <?=$country?></p>	
+			<p id="day"><?=$day_date?></p>
+			<div class="clear">
+				<content id="event">
+					<img src="<?=$weather_icon?>"/>
+				</content>
+				<content id="temp">
+					<p><?=$max_temp?>&deg;C</p>
+					<p><?=$min_temp?>&deg;C</p>
+				</content>
+				<content id="other">
+					<p><img src="<?=$wind_icon?>">&nbsp;<?=$wind_speed?>mph <strong><?=$wind_direction?></strong></p>
+					<p><img src="<?=$humidity_icon?>">&nbsp;<?=$humidity?> %</p>
+					<p><img src="<?=$barometer_icon?>">&nbsp;<?=$pressure?> hPa</p>
+				</content>
+				<content id="sun" class="clear">
+					<div class="left">
+						<img src="<?=$sun_icon?>">
+					</div>
+					<div class="left"> 
+						<p><?=$sunrise?></p>
+						<p><?=$sunset?></p>
+					</div>
+				</content>						
+			</div>
+		</article>
+		
+		<script> 
+			var url = "<?php echo Avi\HTML::url("images/weather-backgrounds/$icon.jpg");?>";
+			$("body").css({'background-image': 'url('+url+')', 'background-size' : 'cover', 'background-repeat' : 'no-repeat'});
+		</script>
+	</section>

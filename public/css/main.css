@@ -1,0 +1,194 @@
+	/*
+	* Filename: main.css
+	* Author: Avinash Rai
+	* Last Modified: 21/06/2015
+	* Description: The main stylesheet.
+	*/
+
+
+	/* Reset */
+	* { 
+		border:none;
+		margin:0;
+		padding:0;
+	}
+	
+	/* Elementary Styling */
+	main { 
+		background-color:rgba(0,0,0,.4);
+		margin:40px;
+		font-family:Arial;
+	}
+	
+	a {
+		text-decoration:none;
+		color:#FFF;
+	}
+
+	.left { 
+		float:left;
+	} 
+	
+	.right { 
+		float:right;
+	} 
+	.center {
+		width:50%;
+		margin: 0 auto;
+	} 
+	
+	.clear:before, .clear:after { 
+		content: ""; display: table; 
+	}
+	.clear:after { 
+		clear: both; 
+	}
+	
+	/* Specific */
+
+	header { 
+		padding:25px;
+		color:#FFF;
+	}
+	header > article.logo { 
+		width:33%;
+		font-size:18px;
+	}
+	header > article.logo small{ 
+		font-size:14px;
+	}
+	header > article.power { 
+		width:33%;
+	}
+	header > article.power img{ 
+		height:25px;
+		width:auto;
+	}	
+	header > article.search {
+		width:33%;
+	} 		
+	header > article.search input { 
+		width:100%; 
+		height:35px;
+		border:2px solid #FFF;
+		background-color:rgba(0,0,0,0);
+		color:#FFF;
+		font-size:17px;
+		padding-left:10px;
+	} 
+	header > article.search input:focus{ 
+		outline:none;
+	}
+	header > article.search > #search-results{ 
+		background-color:rgba(0,0,0,.6);
+		position:absolute;
+		z-index: 10;
+		width:auto;
+		overflow:hidden;
+	}
+	header > article.search > #search-results li{ 
+		padding:10px 20px;
+		list-style:none;		
+	} 
+	header > article.search > #search-results a{ 
+		text-decoration:none;
+		color:#FFF;
+		font: 15px arial;
+	}
+	
+	#loader { 
+		width:100%;
+		height:auto;
+	}
+	
+	/* SECTION: CURRENT-WEATHER*/
+	
+	section { 
+		margin:35px 0;
+		padding:0 25px;
+		color:#FFF;
+	} 
+	section.current #city { 
+		font-size:40px;
+	}	
+	section.current #day { 
+		font-size:30px;
+	}
+	section.current content {
+		padding:20px 25px;
+		float:left;
+		display:block;
+		text-align:left;
+	}
+	section.current #event img {
+		width:128px;
+		height:128px;		
+	}
+	section.current #event p {
+		font-size:21px;		
+	}
+	section.current #temp p { 
+		font-size:45px;
+	}
+	section.current #temp p:last-child { 
+		color:rgba(255, 255, 255, .5);
+	}
+	section.current #other img {
+		width:17px;
+		height:17px;	
+	}
+	section.current #other p {
+		margin:8px 0;
+		font-size:17px;
+	}
+	section.current #sun img { 
+		width:64px;
+		height:64px;	
+	}
+	section.current #sun p {
+		font-weight:bold; 
+		font-size:17px;
+		margin:9px 5px;
+	}
+	
+	/*SECTION: WEATHER FORCECAST*/
+	
+	section.forecast article { 
+		text-align:left;
+		float:left;
+		width:19.5%;
+		color:#FFF;
+	}
+	section.forecast #event {
+		width:64px;
+		height:64px
+	}
+	section.forecast img {
+		width:15px;
+		height:15px;
+	}
+	section.forecast #temp{
+		font-size:20px;
+	}
+	section.forecast p { 
+		font-size:15px;
+		margin:7px 0;
+	}
+	
+	
+	/*FOOTER*/
+	
+	footer { 
+		font-size:15px;
+		padding:20px 20px;
+		color:#FFF;
+	}
+	footer p {
+		margin:10px 20px;
+	}		 
+	footer img {
+		width:auto;
+		height:18px;
+	}
+	
+	
