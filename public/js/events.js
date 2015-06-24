@@ -5,7 +5,6 @@
 	 * Description: GUI Event Handlers.
 	 */
 
-
 	$( document ).ready(function() {
 		
 		/* Make an AJAX request with url "MainController/weatherdata". */
@@ -44,6 +43,16 @@
 	/* Make an AJAX request with url "MainController/weatherdata/id". */	
 	function weatherBySelect(id) {
 		var weather = new Ajax('GET', 'MainController/weatherData', id);
+		weather.response('#main');
+		delete weather;
+		$( "#search-results" ).html('');
+		$( "#search-bar" ).val('Search for a town/city by name');
+	}
+	
+	/* Make an AJAX request with url "MainController/weatherdata". */	
+	function weatherByCoordinates(lat, long) {
+		var data = "lat=" + lat + "&long=" + long;
+		var weather = new Ajax('POST', 'MainController/weatherData', data);
 		weather.response('#main');
 		delete weather;
 		$( "#search-results" ).html('');

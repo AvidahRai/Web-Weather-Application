@@ -8,9 +8,9 @@
 ?>
 
 <?php foreach($data as $city) {
-			extract($city);?>
+		extract($city);?>
 		<li>
-			<a href="javascript:void(0)" onclick="weatherBySelect(<?=$id?>)">
+			<a href="javascript:weatherByCoordinates(<?=$lat?>,<?=$long?>)">
 				<strong><?=$name?>, <?=$country?></strong> <small>( <?=$lat?>, <?=$long?>)</small>
 			</a>
 		</li>
