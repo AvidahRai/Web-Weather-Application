@@ -84,25 +84,23 @@
 		 */
 		public function location($query='') {
 	
-			if ( !Request::isAjax() ) {
+			if ( Request::isAjax() ) {
 				
-				Router::redirectToHome();
-			}
-			
-			if ( strlen($query) > 3 && preg_match('/^[A-z]+$/', $query)) {
+				if ( strlen($query) > 3 && preg_match('/^[A-z]+$/', $query)) {
+						
+					$file_path = Config::get('storage.openweathermapcity.uri');
 					
-				$file_path = Config::get('storage.openweathermapcity.uri');
-				
-				$openWeatherMapCity = parent::model('OpenWeatherMapCity', $file_path);
-				
-			 	$query = str_replace('_', ' ', $query);
-				
-				$openWeatherMapCity->search($query, 21);
-								
-				parent::view('components/search-results', $openWeatherMapCity->getResults() );
-				
-				unset($openWeatherMapCity, $file_path);
-			}
+					$openWeatherMapCity = parent::model('OpenWeatherMapCity', $file_path);
+					
+					$query = str_replace('_', ' ', $query);
+					
+					$openWeatherMapCity->search($query, 21);
+									
+					parent::view('components/search-results', $openWeatherMapCity->getResults() );
+					
+					unset($openWeatherMapCity, $file_path);
+				}
+			}				
 		}
 		
 	}
