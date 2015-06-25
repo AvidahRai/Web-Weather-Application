@@ -12,8 +12,8 @@ Weather Application is an one-page web application, developed and designed for d
 
 <h3>Setup Instructions</h3>
 
-1. You will need to first get an Application Key from <a href="http://openweathermap.org/api">OpenWeatherMap.</a>. <br><strong>Note this is not a product placement scheme and there are other alternatives for this.</strong>
-2. In the "application/config.php" file change the value 'APPID' => '', with the new accquired Application key.
+1. You will need to first get an Application Key from <a href="http://openweathermap.org/api">OpenWeatherMap.</a>. <br><strong>Note this is not a product placement scheme and there are other alternatives for this. However this will require configuration changes and may require changes in the "view" files.</strong>
+2. In the "application/config.php" file (All configuration settings), change the value 'APPID' => '', with the new accquired Application key.
 3. Place all folders in a desired location and set the URL Pointer to the "public" making it the document root folder.
 4. Run the application and enjoy.
 
