@@ -17,8 +17,7 @@
 			'developer' => 'Avinash Rai',
 			'url' => ' ',
 			'encoding' => 'utf-8',
-			'time_zone' => 'GMT',
-			
+			'time_zone' => 'GMT'
 		],
 			
 		/*
@@ -51,9 +50,9 @@
 					'cache' => path('storage').'open-weather-map'.DS.'weather'.DS.date('Y-m-d').DS.'forecast'.DS
 				],
 				'keys' => [
-					'APPID' => 'PLEASE GET AN APPLICATION KEY FROM http:\\Github'
+					'APPID' => 'PLEASE GET AN APPLICATION KEY FROM http://openweathermap.org/'
 				]
-			],
+			]
 		],
 			
 		/*
