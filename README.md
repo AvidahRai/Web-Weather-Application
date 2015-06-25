@@ -7,7 +7,7 @@ Weather Application is an one-page web application, developed and designed for d
 
 <h3>Features</h3>
 
-1. The application uses Telize GeoIP to find the user's location and call the weather information from OpenWeatherMap API.
+1. The application uses Telize GeoIP to find the user's geo co-ordinates and use to it to call the weather information from OpenWeatherMap API.
 2. The user's can search for a location, by entering the location's name on the application's Autocomplete search feature. Selecting the location will display its weather information.
 
 <h3>Setup Instructions</h3>
