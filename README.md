@@ -4,9 +4,9 @@ Release: 23/06/2015
 
 Weather Application is an one-page web application, developed and designed for displaying current and five-day-forecast weather data for a single location. This application uses two APIs :- <a href="http://openweathermap.org/api">OpenweatherMapAPI</a> and <a href="http://www.telize.com/">Telize GeoIP API</a>.
 
-<h3>Feature</h3>
+<h3>Features</h3>
 
-1. The application uses Telize GeoIP to find the user's location and calls the weather information from OpenWeatherMapAPI.
+1. The application uses Telize GeoIP to find the user's location and call the weather information from OpenWeatherMap API.
 2. The user's can search for a location, by entering the location's name on the application's Autocomplete search feature. Selecting the location will display its weather information.
 
 <h3>Setup Instructions</h3>
