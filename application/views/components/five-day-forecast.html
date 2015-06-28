@@ -2,13 +2,19 @@
 	/*
 	 * Filename: five-day-forecast.html
 	 * Author: Avinash Rai
-	 * Last Modified: 21/06/2015
+	 * Last Modified: 28/06/2015
 	 * Description: components/five-day-forecast View.
 	 */	
 ?>
 
 	<section id="weather-forecast" class="forecast clear">
 		<?php
+		
+			$humidity_icon = Avi\HTML::url("images/weather-icons/humidity.ico");
+			$wind_icon = Avi\HTML::url("images/weather-icons/wind.ico");
+			$temp_icon = Avi\HTML::url("images/weather-icons/temperature.ico");
+			$barometer_icon = Avi\HTML::url("images/weather-icons/barometer.png");
+			
 			for ( $i=1; $i < $data->get('cnt'); $i++ ) {
 				
 				$day_date = strtoupper(date( 'D d', $data->get("list.$i.dt")));			
@@ -20,10 +26,6 @@
 				$wind_speed = round($data->get("list.$i.speed"));
 				$wind_direction = $data->cardinalDirection($data->get("list.$i.deg"));
 				$weather_icon = Avi\HTML::url("images/weather-icons/$icon.ico");
-				$humidity_icon = Avi\HTML::url("images/weather-icons/humidity.ico");
-				$wind_icon = Avi\HTML::url("images/weather-icons/wind.ico");
-				$temp_icon = Avi\HTML::url("images/weather-icons/temperature.ico");
-				$barometer_icon = Avi\HTML::url("images/weather-icons/barometer.png");
 
 				echo <<<FORECAST
 					<article>
