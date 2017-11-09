@@ -16,7 +16,3 @@ Weather Application is an one-page web application, developed and designed for d
 2. In the "application/config.php" file, set the value <strong>'APPID' =>  </strong>, with the new accquired Application key.
 3. Place all folders in a desired location.
 4. Run the application, by setting the URL Pointer to the "public" folder. E.g. <i> http://localhost/weather-application/public/</i>
-
-<h3>Links</h3>
-
-1. To view the working example visit the site: <a href="http://weather-application.avinashrai.com/">http://weather-application.avinashrai.com/</a>
